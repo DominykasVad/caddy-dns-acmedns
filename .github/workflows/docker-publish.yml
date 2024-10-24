@@ -13,10 +13,6 @@ on:
       - '**/README.md'
   workflow_dispatch:
 
-env:
-  ## github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   ## define job to build and publish docker image
   build-and-push-docker-image:
@@ -30,6 +26,13 @@ jobs:
       id-token: write
 
     steps:
+      ## https://github.com/ASzc/change-string-case-action
+      - name: Change string to lowercase
+        id: repository
+        uses: ASzc/change-string-case-action@v6
+        with:
+          string: ${{ github.repository }}
+      
       ## https://github.com/actions/checkout
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -59,7 +62,7 @@ jobs:
           # tags: ${{ steps.meta.outputs.tags }}
           # labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            ghcr.io/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ repository.string.outputs.lowercase }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
