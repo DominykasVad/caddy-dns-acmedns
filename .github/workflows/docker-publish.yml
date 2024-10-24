@@ -62,7 +62,7 @@ jobs:
           # tags: ${{ steps.meta.outputs.tags }}
           # labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            ghcr.io/${{ repository.string.outputs.lowercase }}:latest
+            ghcr.io/${{ steps.repository.outputs.lowercase }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
