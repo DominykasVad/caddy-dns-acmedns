@@ -1,7 +1,7 @@
 # caddy-dns-acmedns
 Caddy Web Server with ACME-DNS Provider
 
-[![Docker Build and Publish](https://github.com/timelordx/caddy-dns-acmedns/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/timelordx/caddy-dns-acmedns/actions/workflows/docker-publish.yml)
+[![Docker Build and Publish](https://github.com/DominykasVad/caddy-dns-acmedns/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/DominykasVad/caddy-dns-acmedns/actions/workflows/docker-publish.yml)
 
 **DockerHub:** [timelordx/caddy-dns-acmedns](https://hub.docker.com/r/timelordx/caddy-dns-acmedns)
 
@@ -11,11 +11,6 @@ Caddy Web Server with ACME-DNS Provider
 
 ```
 docker pull ghcr.io/timelordx/caddy-dns-acmedns:latest
-```
-* from Docker Hub:
-
-```
-docker pull timelordx/caddy-dns-acmedns:latest
 ```
 
 **Documentation**
